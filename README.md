@@ -1,2 +1,2 @@
-## DIY Connect
-# Developer: Morgan Asare
+# DIY Connect
+## Developer: Morgan Asare
