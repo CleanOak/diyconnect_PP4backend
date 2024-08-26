@@ -36,7 +36,9 @@ SECRET_KEY = 'django-insecure-&4@l^l$onwu%ejp@11#lkeii=7ov@ie(i+!pyvk436y)9%8r#4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '8000-cleanoak-diyconnectpp4b-cbgihzreb3l.ws-eu115.gitpod.io',
+]
 
 
 # Application definition
@@ -50,6 +52,9 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+
+
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -92,6 +97,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeanyapp.com",
+    "https://*.herokuapp.com",
+    "https://*.gitpod.io/",
+    "https://*.codeinstitute-ide.net/"
+]
+
 
 
 # Password validation
