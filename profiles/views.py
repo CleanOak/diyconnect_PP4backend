@@ -37,7 +37,7 @@ class ProfileDetail(APIView):
     def put(self, request, pk):
         profile = self.get_object(pk)
         serializer = ProfileSerializer(
-            profile, data=request.data, context={'request', request}
+            profile, data=request.data, context={'request': request}
             )
         if serializer.is_valid():
             serializer.save()
