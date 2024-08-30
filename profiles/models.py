@@ -9,15 +9,15 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
-    image = CloudinaryField('images', default='https://res.cloudinary.com/dojf2qfyl/image/upload/v1721073499/nobody_nruqan.jpg')
+    image = models.ImageField(upload_to='images/', default='https://res.cloudinary.com/dojf2qfyl/image/upload/v1721073499/nobody_nruqan.jpg')
    
 
-class Meta:
-    ordering = ['-created_at']
+    class Meta:
+        ordering = ['-created_at']
 
 
-def __str__(self):
-    return f"{self.owner}'s profile"
+    def __str__(self):
+        return f"{self.owner}'s profile"
 
 
 def create_profile(sender, instance, created, **kwargs):
