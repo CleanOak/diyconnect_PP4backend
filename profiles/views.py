@@ -6,7 +6,7 @@ from .models import Profile
 from .serializers import ProfileSerializer
 from diy_connect.permissions import IsOwnerReadOnly
 
-class PostList(APIView):
+class ProfileList(APIView):
     def get(self, request):
         profiles = Profile.objects.all()
         serializer = ProfileSerializer(
