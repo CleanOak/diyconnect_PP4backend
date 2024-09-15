@@ -9,7 +9,7 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
-    image = CloudinaryField('image', default='no_image_mvrwpr')
+    image = models.ImageField(upload_to='images/', default='no_image_mvrwpr')
 
     
    
