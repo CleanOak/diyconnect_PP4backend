@@ -32,4 +32,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'posts_count', 'followers_count', 'following_count',
         ]
 
-    image = serializers.ImageField(required=False)
+#Define the image field in the serializer
+    image = serializers.ImageField(required=False) 
