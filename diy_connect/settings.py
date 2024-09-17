@@ -67,7 +67,7 @@ ALLOWED_HOSTS = [
     '8000-cleanoak-diyconnectpp4b-cbgihzreb3l.ws-eu115.gitpod.io',
     '8000-cleanoak-diyconnectpp4b-8p196xhntw9.ws-eu116.gitpod.io',
     'diyconnect_PP4backend.herokuapp.com',
-    'https://edenhubbackend-1f7d010b86f9.herokuapp.com',
+    'edenhubbackend-1f7d010b86f9.herokuapp.com',
 ]
 
 
