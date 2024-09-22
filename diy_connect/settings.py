@@ -69,6 +69,7 @@ ALLOWED_HOSTS = [
     'diyconnect_PP4backend.herokuapp.com',
     os.environ.get('ALLOWED_HOSTS'),
     'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -123,7 +124,7 @@ if "CLIENT_ORIGIN" in os.environ:
 if "CLIENT_ORIGIN_DEV" in os.environ:
     CORS_ALLOWED_ORIGINS.append(os.environ.get("CLIENT_ORIGIN_DEV"))
 if 'DEV':
-    CORS_ALLOWED_ORIGINS.append("http://localhost:3000")
+    CORS_ALLOWED_ORIGINS.append("http://localhost:8000")
 
 CORS_ALLOW_CREDENTIALS = True
 
