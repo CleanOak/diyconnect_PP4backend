@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import re
 import dj_database_url
 
 if os.path.exists('env.py'):
@@ -64,9 +65,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-cleanoak-diyconnectpp4b-cbgihzreb3l.ws-eu115.gitpod.io',
-    '8000-cleanoak-diyconnectpp4b-8p196xhntw9.ws-eu116.gitpod.io',
-    'diyconnect_PP4backend.herokuapp.com',
+    '8000-cleanoak-diyconnectpp4b-czg0ha86vk9.ws.codeinstitute-ide.net',
     os.environ.get('ALLOWED_HOSTS'),
     'localhost',
     '127.0.0.1',
@@ -118,17 +117,14 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://edenhub-060ed3b8a582.herokuapp.com',
-    'http://localhost:3000',
+    # 'https://edenhub-060ed3b8a582.herokuapp.com',
+    # '3000-cleanoak-edenhubfronten-5xda4n4d4tn.ws.codeinstitute-ide.net/',
 ]
 
-# if "CLIENT_ORIGIN" in os.environ:
-#     CORS_ALLOWED_ORIGINS.append(os.environ.get("CLIENT_ORIGIN"))
-# if "CLIENT_ORIGIN_DEV" in os.environ:
-#     CORS_ALLOWED_ORIGINS.append(os.environ.get("CLIENT_ORIGIN_DEV"))
-# if 'DEV':
-#     CORS_ALLOWED_ORIGINS.append("http://localhost:3000")
-CORS_ALLOW_ALL_ORIGINS = False
+if 'CLIENT_ORIGIN_DEV' in os.environ:    
+    CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",] 
+
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'diy_connect.urls'
