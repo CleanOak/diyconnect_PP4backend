@@ -124,7 +124,7 @@ if "CLIENT_ORIGIN" in os.environ:
 if "CLIENT_ORIGIN_DEV" in os.environ:
     CORS_ALLOWED_ORIGINS.append(os.environ.get("CLIENT_ORIGIN_DEV"))
 if 'DEV':
-    CORS_ALLOWED_ORIGINS.append("http://localhost:8000")
+    CORS_ALLOWED_ORIGINS.append("http://localhost:3000")
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -165,10 +165,7 @@ else:
      }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeanyapp.com",
-    "https://*.herokuapp.com",
-    "https://*.gitpod.io/",
-    "https://*.codeinstitute-ide.net/"
+    "https://edenhub-060ed3b8a582.herokuapp.com",
 ]
 
 
