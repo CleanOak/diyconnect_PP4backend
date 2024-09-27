@@ -29,14 +29,15 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION': [(
-        'rest_framework.authentication.SessionAuthenticatioin'
+    'DEFAULT_AUTHENTICATION_CLASSES': [(
+        'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ
-        else 'dj_rest_auth.jwt.JWTCookieAuthentication'
+        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
-     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-     "PAGE_SIZE": 10,
-     "DATETIME_FORMAT": '%d %b %Y',
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DATETIME_FORMAT': '%d %b %Y',
 }
 
 if 'DEV' not in os.environ:
@@ -71,7 +72,7 @@ REST_AUTH = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-cleanoak-diyconnectpp4b-czg0ha86vk9.ws.codeinstitute-ide.net',
@@ -134,7 +135,7 @@ if 'CLIENT_ORIGIN' in os.environ:
         os.environ.get('CLIENT_ORIGIN')
     ]
 
-CORS_ALLOWED_ORIGIN_REGEXES = [ r"^https://.*\.codeinstitute-ide\.net$", ]
+CORS_ALLOWED_ORIGIN_REGEXES = [ r"https://3000-cleanoak-edenhubfronten-5xda4n4d4tn.ws.codeinstitute-ide.net", ]
 
 # if 'CLIENT_ORIGIN_DEV' in os.environ:
 #     extracted_url = re.match(
@@ -146,7 +147,6 @@ CORS_ALLOWED_ORIGIN_REGEXES = [ r"^https://.*\.codeinstitute-ide\.net$", ]
 #         rf"{extracted_url}(eu|us)\d+\w\.codeinstitute-ide\.net$",
 #     ]
 
-CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'diy_connect.urls'
