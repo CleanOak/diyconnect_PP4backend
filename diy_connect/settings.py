@@ -72,7 +72,8 @@ REST_AUTH = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG' in os.environ
+# DEBUG = 'DEBUG' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-cleanoak-diyconnectpp4b-czg0ha86vk9.ws.codeinstitute-ide.net',
