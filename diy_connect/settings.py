@@ -45,16 +45,6 @@ if 'DEV' not in os.environ:
         'rest_framework.renderers.JSONRenderer',
     ]
 
-# REST_USE_JWT = True
-# JWT_AUTH_SECURE = True
-# JWT_AUTH_COOKIE = "my-app-auth"
-# JWT_AUTH_REFRESH_COOKIE = "app-refresh-token"
-# JWT_AUTH_SAMESITE = 'None'
-
-# REST_AUTH_SERIALIZERS = {
-#     'USER_DETAILS_SERIALIZER': 'diy_connect.serializers.CurrentUserSerializer'
-# }
-
 REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_SECURE': True,
@@ -127,10 +117,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     os.environ.get('CLIENT_ORIGIN')
-# ]
-
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
@@ -138,15 +124,6 @@ if 'CLIENT_ORIGIN' in os.environ:
 
 CORS_ALLOWED_ORIGIN_REGEXES = [ r"https://3000-cleanoak-edenhubfronten-5xda4n4d4tn.ws.codeinstitute-ide.net", ]
 
-# if 'CLIENT_ORIGIN_DEV' in os.environ:
-#     extracted_url = re.match(
-#         r'^.+-',
-#         os.environ.get('CLIENT_ORIGIN_DEV', ''),
-#         re.IGNORECASE
-#     ).group(0)
-#     CORS_ALLOWED_ORIGIN_REGEXES = [
-#         rf"{extracted_url}(eu|us)\d+\w\.codeinstitute-ide\.net$",
-#     ]
 
 CORS_ALLOW_CREDENTIALS = True
 
