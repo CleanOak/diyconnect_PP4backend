@@ -123,9 +123,6 @@ if 'CLIENT_ORIGIN' in os.environ:
     ]
 
 CORS_ALLOWED_ORIGIN_REGEXES = [ r"https://3000-cleanoak-edenhubfronten-5xda4n4d4tn.ws.codeinstitute-ide.net", ]
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
 
 CORS_ALLOW_CREDENTIALS = True
 
