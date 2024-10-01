@@ -233,6 +233,5 @@ You can view the deployed API here: [From House to Home API](https://home-api-58
 
 # **Credits**
 
-All credits and acknowledgements have been detailed in the main frontend repo. ***Link to be inserted here***
-
+All credits and acknowledgements have been detailed in the main frontend repo. [Link to Frontend README file](https://github.com/CleanOak/edenhub_frontend/blob/main/README.md)
 
