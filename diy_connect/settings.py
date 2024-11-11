@@ -63,10 +63,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEBUG' in os.environ
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-cleanoak-diyconnectpp4b-czg0ha86vk9.ws.codeinstitute-ide.net',
+    '8000-cleanoak-diyconnectpp4b-6bg9waskkzp.ws.codeinstitute-ide.net',
     os.environ.get('ALLOWED_HOSTS'),
     'localhost',
     '127.0.0.1',
