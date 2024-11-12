@@ -121,7 +121,10 @@ if 'CLIENT_ORIGIN' in os.environ:
         os.environ.get('CLIENT_ORIGIN')
     ]
 
-CORS_ALLOWED_ORIGIN_REGEXES = [ r"https://3000-cleanoak-edenhubfronten-hhx8hz9978f.ws.codeinstitute-ide.net/", ] # pylint: disable=line-too-long
+# CORS_ALLOWED_ORIGIN_REGEXES = [ r"https://3000-cleanoak-edenhubfronten-hhx8hz9978f.ws.codeinstitute-ide.net/", ] # pylint: disable=line-too-long
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.codeinstitute-ide\.net$"
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
