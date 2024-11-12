@@ -123,10 +123,6 @@ if 'CLIENT_ORIGIN' in os.environ:
 
 CORS_ALLOWED_ORIGIN_REGEXES = [ r"https://3000-cleanoak-edenhubfronten-hhx8hz9978f.ws.codeinstitute-ide.net/", ] # pylint: disable=line-too-long
 
-CORS_ALLOWED_ORIGINS = [
-    "https://3000-cleanoak-edenhubfronten-hhx8hz9978f.ws.codeinstitute-ide.net",
-]
-
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'diy_connect.urls'
