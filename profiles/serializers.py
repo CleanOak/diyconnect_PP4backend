@@ -33,4 +33,4 @@ class ProfileSerializer(serializers.ModelSerializer):
         ]
 
 #Define the image field in the serializer
-    image = serializers.ImageField(required=False) 
+    image = serializers.ImageField(required=False)
