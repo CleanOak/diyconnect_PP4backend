@@ -27,6 +27,9 @@ class Post(models.Model):
     )
 
     class Meta:
+        """
+        Class to order in descending order
+        """
         ordering = ['-created_at']
         
     def __str__(self):
