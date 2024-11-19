@@ -59,7 +59,7 @@ Various data models were drawn out before creating the actual models, to serve a
 
 | **MODEL**                    |          **KEY**                      |    **NAME**              |   **TYPE**              |
 | ------------------------------------------ | ------------------------------------- | ---------------- |-----------------------|
-| **CATEGORY APP**                               |                                                             |             |        |
+| ** USER**                             |          PrimaryKey                      |      id       |    Integer    |
 | *Category List*                              |                                                             |             |          |
 | **Testcase**                                   | **Expected Result**                        | **Test Result** |                    |
 | GET /category/ Unauthenticated             | 200 OK, list of all categories                          | Pass✅       |               |
