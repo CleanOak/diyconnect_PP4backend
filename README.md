@@ -57,8 +57,9 @@ A user story was created solely for the backend to ensure focus and consistency.
 
 Various data models were drawn out before creating the actual models, to serve as a blueprint for database design, helping with concepts and organisation of the structure of a database.
 
-| **Model** | **Key**  | **Name** | **Type** |
-
+| **Model**                 | **Key**               | **Name**                     | **Type**           |
+-------------------------------------------------------------------------------------------------------- |
+| User                       |    PrimaryKey        |    id                         |    Integer         |
 
 ## **Relationships**
 
