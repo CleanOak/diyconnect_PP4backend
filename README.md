@@ -132,8 +132,15 @@ Logged-in users can engage with posts by leaving their own comments. Users are a
 Logged-in users are able to like posts or other user profiles. Users are able to see their likes and delete them if they wish.
 
 **API Endpoints:**
-- **/likes/**: to list (GET) or create (POST) likes.
+- **/likes/**: to list (POST) likes.
 - **/likes/:id/**: to show (GET) or delete (DELETE) a like.
+
+## **Bookmarks**
+Logged-in users are able to bookmark posts of other user profiles. Users are able to see their bookmarked and delete them if they wish.
+
+**API Endpoints:**
+- **/bookmarks/**: to list (POST) bookmarks.
+- **/bookmarks/:id/**: to show (GET) or delete (DELETE) a bookmark.
 
 ## **Followers**
 
