@@ -1,10 +1,9 @@
 from rest_framework import generics, permissions
 from diy_connect.permissions import IsOwnerReadOnly
-from django.db.models import Count
 from .models import Bookmark
 from .serializers import BookmarkSerializer
 
-class BookmarkList(generics.ListAPIView):
+class BookmarkList(generics.ListCreateAPIView):
     """
     List all bookmarks for the logged-in user.
     """
