@@ -57,17 +57,17 @@ A user story was created solely for the backend to ensure focus and consistency.
 
 Various data models were drawn out before creating the actual models, to serve as a blueprint for database design, helping with concepts and organisation of the structure of a database.
 
-| **MODEL**                    |          **KEY**                                    |    **NAME**              | 
-| ------------------------------------------ | ----------------------------------------------------------- | ----------- |
-| **CATEGORY APP**                               |                                                             |             |
-| *Category List*                              |                                                             |             |
-| **Testcase**                                   | **Expected Result**                                             | **Test Result** |
-| GET /category/ Unauthenticated             | 200 OK, list of all categories                              | Pass✅       |
-| GET /category/ Authenticated               | 200 OK, list of all categories                              | Pass✅       |
-| POST /category/ Authenticated              | 201 Created, new category created                           | Pass✅       |
-| POST /category/ Unauthenticated            | 403 Forbidden, user not authenticated                       | Pass✅       |
-|                                            |                                                             |             |
-| *Category Detail*                            |                                                             |             |
+| **MODEL**                    |          **KEY**                                    |    **NAME**              |   **TYPE** |
+| ------------------------------------------ | ----------------------------------------------------------- | ----------- |------------|
+| **CATEGORY APP**                               |                                                             |             |        |
+| *Category List*                              |                                                             |             |          |
+| **Testcase**                                   | **Expected Result**                        | **Test Result** |                    |
+| GET /category/ Unauthenticated             | 200 OK, list of all categories                          | Pass✅       |               |
+| GET /category/ Authenticated               | 200 OK, list of all categories                         | Pass✅       |                |
+| POST /category/ Authenticated              | 201 Created, new category created                     | Pass✅       |                 |
+| POST /category/ Unauthenticated            | 403 Forbidden, user not authenticated                 | Pass✅       |                  |
+|                                            |                                                      |             |                   |
+| *Category Detail*                            |                                          |                    |                      |
 
 ## **Relationships**
 
