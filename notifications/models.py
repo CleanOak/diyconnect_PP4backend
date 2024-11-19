@@ -1,29 +1,25 @@
 from django.contrib.auth.models import User
 from django.db import models
 from posts.models import Post
-from profiles.models import Profile
-from comments.models import Comment
-from likes.models import Like
-
 
 class Notification(models.Model):
     """
     Notification model relating to post, profile,
     comment, like
     """
+    TYPE_CHOICES = [
+        ('like', 'Like'),
+        ('comment', 'Comment'),
+        ('follow', 'Follow'),
+    ]
+
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES)
     owner = models.ForeignKey(User, on_delete=models.CASCADE,
-    related_name="notifications")
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-    null=True, blank=True, related_name="notifications")
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,
-    null=True, blank=True, related_name="notifications")
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE,
-    null=True, blank=True, related_name="notifications")
-    like = models.ForeignKey(Like, on_delete=models.CASCADE, null=True,
-    blank=True, related_name="notifications")
-    message = models.TextField()
+    related_name='notifications')  # Recipient
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='notifications')
+    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_notifications')
+    created_at = models.DateTimeField(auto_now_add=True)
     is_read = models.BooleanField(default=False)
-    created_at = models. DateTimeField(auto_now_add=True)
 
 
     class Meta:

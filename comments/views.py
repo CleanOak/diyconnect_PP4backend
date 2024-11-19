@@ -16,7 +16,16 @@ class CommentList(generics.ListCreateAPIView):
     filterset_fields = ['post']
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        comment = serializer.save(owner=self.request.user)
+
+        # Create a notification for the post owner (if not commenting on their own post)
+        if comment.post.owner != self.request.user:
+            Notification.objects.create(
+                user=comment.post.owner,  # The recipient of the notification
+                sender=self.request.user,  # The user who commented
+                post=comment.post,  # The post that was commented on
+                type="comment",  # Notification type
+            )
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
