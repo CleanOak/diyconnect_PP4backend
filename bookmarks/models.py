@@ -7,7 +7,7 @@ class Bookmark(models.Model):
     """
     Bookmark model relating to post
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookmarks")
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookmarks")
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="bookmarked_by")
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -16,6 +16,7 @@ class Bookmark(models.Model):
         Class to order in descending order
         """
         ordering = ['-created_at']
+        unique_together = ['owner', 'post']
 
     def __str__(self):
-        return f"{self.user} bookmarked {self.post}"
+        return f"{self.owner} bookmarked {self.post}"
