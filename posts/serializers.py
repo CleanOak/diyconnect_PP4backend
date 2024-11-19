@@ -15,7 +15,6 @@ class PostSerializer(serializers.ModelSerializer):
     bookmark_id = serializers.SerializerMethodField()
     bookmark_count = serializers.ReadOnlyField()
 
-
     def validate_image(self, value):
         if value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(

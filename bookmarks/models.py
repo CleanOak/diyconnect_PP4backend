@@ -7,8 +7,8 @@ class Bookmark(models.Model):
     """
     Bookmark model relating to post
     """
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookmarks")
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="bookmarked_by")
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="bookmarks")
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
