@@ -57,9 +57,8 @@ A user story was created solely for the backend to ensure focus and consistency.
 
 Various data models were drawn out before creating the actual models, to serve as a blueprint for database design, helping with concepts and organisation of the structure of a database.
 
-![Data Model](https://github.com/CleanOak/diyconnect_PP4backend/blob/main/assets/datamodels.jpeg)
+![Data Model](https://github.com/CleanOak/diyconnect_PP4backend/blob/main/assets/)
 
-# Show Image here
 
 ## **Relationships**
 
@@ -81,12 +80,10 @@ Various data models were drawn out before creating the actual models, to serve a
 ### Followers:
 - User (ManyToMany): Followers represent a ManyToMany relationship with users. A user can follow many users, and each user can be followed by many users.
 
-### Notifications:
-- User (ManyToOne): Each notification is associated with a single user, creating a ManyToOne relationship. A user can receive multiple notifications, but each notification is linked to only one user.
-- Post (ManyToOne): This represents a ManyToOne relationship where each notification can be associated with a single post, but a post can generate multiple notifications.
-- Comment (ManyToOne): This represents a ManyToOne relationship where each notification can be associated with a single comment, but a comment can generate multiple notifications.
-- Like (ManyToOne): This represents a ManyToOne relationship where each notification can be linked to a single like, but a like can generate multiple notifications.
-- Follower (ManyToOne): This represents a ManyToOne relationship where each notification can be associated with a specific follower, but each follower can generate multiple notifications.
+### Bookmark
+- User (OneToMany): bookmarks are made by users, forming another OneToMany relationship. A user can bookmark multiple posts, but each bookmark is attributed to only one user.
+- Post (OneToMany): Bookmarks are associated with posts, following a OneToMany relationship. Each post can have multiple bookmarks, but each bookmark is linked to only one post.
+
 
 ---
 
