@@ -17,16 +17,7 @@ class FollowerList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         follow = serializer.save(owner=self.request.user)
 
-         # Create a notification for the post owner (if not follow on their profile)
-        if follow.post.owner != self.request.user:
-            Notification.objects.create(
-                user=follow.post.owner,  # The recipient of the notification
-                sender=self.request.user,  # The user who commented
-                post=follow.post,  # The post that was commented on
-                type="follow",  # Notification type
-            )
-
-
+    
 class FollowerDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve a follower
