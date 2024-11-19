@@ -1,34 +1,24 @@
 from rest_framework import generics, permissions
-from django.db.models import Count
+from diy_connect.permissions import IsOwnerReadOnly
 from .models import Notification
 from .serializers import NotificationSerializer
 
-class NotificationList(generics.ListAPIView):
+class NotificationList(generics.ListCreateAPIView):
     """
     List all notifications for the logged-in user.
     """
     serializer_class = NotificationSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Notification.objects.all()
 
-    def get_queryset(self):
-        """
-        Return notifications for the logged-in user.
-        """
-        return Notification.objects.filter(user=self.request.user).annotate(
-            likes_count=Count('like', distinct=True)
-        ).order_by('-created_at')
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
-
-class NotificationDetail(generics.RetrieveUpdateDestroyAPIView):
+class NotificationDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve, update, or delete a specific notification.
     Mark notification as read using PATCH or update.
     """
+    permission_classes = [IsOwnerReadOnly]
+    queryset = Notification.objects.all()
     serializer_class = NotificationSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        """
-        Ensure users can only access their own notifications.
-        """
-        return Notification.objects.filter(user=self.request.user)

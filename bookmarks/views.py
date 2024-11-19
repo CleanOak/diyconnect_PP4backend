@@ -14,15 +14,6 @@ class BookmarkList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    # def get_queryset(self):
-    #     """
-    #     Return bookmarks for the logged-in user.
-    #     """
-    #     return Bookmark.objects.filter(user=self.request.user).annotate(
-    #         post_likes_count=Count('post__likes', distinct=True)
-    #     ).order_by('-created_at')
-
-
 class BookmarkDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve, update, or delete a specific bookmark.
