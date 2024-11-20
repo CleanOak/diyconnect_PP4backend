@@ -67,28 +67,68 @@ Various data models were drawn out before creating the actual models, to serve a
 | **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
 | -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
 | **Profile**                  |          PrimaryKey         |      id                  |    Integer                                 |
-|                              |          ForeingKey        |       owner              |                                            |
-|                              |                             |      name             |                                            |
-|                              |                             |       desciption              |                                      |
-|                              |                             |      image               |                                            |
-|                              |                             |       created_on              |                                      |
-|                              |                             |      updated_on             |                                       |
+|                              |          ForeingKey        |       owner              |        usermodel                         |
+|                              |                             |      name             |           Charfield                           |
+|                              |                             |       desciption              |     TextField                          |
+|                              |                             |      image               |           ImageField                          |
+|                              |                             |       created_on              |      DateTimeField                    |
+|                              |                             |      updated_on             |          DateTimeField                  |
 |                              |                             |                    |                                                 |
 
 
 | **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
 | -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
 | **Post**                  |          PrimaryKey         |      id                  |    Integer                                 |
-|                              |          ForeingKey         |      owner            |                                            |
-|                              |                             |      title            |                                            |
-|                              |                             |       owner              |                                         |
-|                              |                             |      description             |                                       |
-|                              |                             |       image              |                                      |
-|                              |                             |      image               |                                            |
-|                              |                             |       created_on              |                                      |
-|                              |                             |      updated_on             |                                            |
+|                              |          ForeingKey         |      owner            |       usermodel                             |
+|                              |                             |      title            |     Charfield                                |
+|                              |                             |                     |                                         |
+|                              |                             |      description             |   TextField                              |
+|                              |                             |       image              |      CloudinaryField                        |
+|                              |                             |                 |                                                  |
+|                              |                             |       created_on              |  DateTimeField                               |
+|                              |                             |      updated_on             |    DateTimeField                              |
 |                              |                             |                    |                                      |
 
+
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| **Comment**                  |          PrimaryKey         |      id                  |    Integer                                 |
+|                              |          ForeingKey         |      owner            |       usermodel                             |
+|                              |       ForeingKey                |      post            |     Charfield                               |
+|                              |                             |                     |                                         |
+|                              |                             |      content             |   TextField                                 |
+|                              |                             |                 |                                                  |
+|                              |                             |       created_on              |  DateTimeField                               |
+|                              |                             |      updated_on             |    DateTimeField                              |
+|                              |                             |                    |                                      |
+
+
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| **Like**                  |          PrimaryKey         |      id                  |    Integer                                 |
+|                              |          ForeingKey         |      owner            |       usermodel                             |
+|                              |       ForeingKey                |      post            |     Charfield                               |
+|                              |                             |       created_on              |  DateTimeField                              |
+|                              |                             |      updated_on             |    DateTimeField                              |
+|                              |                             |                    |                                      |
+
+
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| **Bookmark**                  |          PrimaryKey         |      id                  |    Integer                                 |
+|                              |          ForeingKey         |      owner            |       usermodel                             |
+|                              |       ForeingKey                |   post            |     Charfield                               |
+|                              |                             |       created_on              |  DateTimeField                              |
+|                              |                             |                    |                                      |
+
+
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| **Follower**                  |          PrimaryKey         |      id                  |    Integer                                 |
+|                              |          ForeingKey         |      owner            |       usermodel                             |
+|                              |       ForeingKey                |      followed            |     Charfield                           |
+|                              |                             |       created_on              |  DateTimeField                          |
+|                              |                             |                              |                                      |
 
 
 
