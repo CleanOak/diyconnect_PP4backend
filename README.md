@@ -57,11 +57,11 @@ A user story was created solely for the backend to ensure focus and consistency.
 
 Various data models were drawn out before creating the actual models, to serve as a blueprint for database design, helping with concepts and organisation of the structure of a database.
 
-| **MODEL**                    |          **KEY**                      |    **NAME**              |   **TYPE**              |
-| ------------------------------------------ | ------------------------------------- | ---------------- |-----------------------|
-| ** USER**                             |          PrimaryKey                      |      id       |    Integer    |
-| *Category List*                              |                                                             |             |          |
-| **Testcase**                                   | **Expected Result**                        | **Test Result** |                    |
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| ** USER**                    |          PrimaryKey         |      id                  |    Integer                                 |
+|                                   |                               |         username             |                                  |
+|                                  |                                |  password                |                                      |
 | GET /category/ Unauthenticated             | 200 OK, list of all categories                          | Pass✅       |               |
 | GET /category/ Authenticated               | 200 OK, list of all categories                         | Pass✅       |                |
 | POST /category/ Authenticated              | 201 Created, new category created                     | Pass✅       |                 |
