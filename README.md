@@ -59,14 +59,26 @@ Various data models were drawn out before creating the actual models, to serve a
 
 | **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
 | -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
-| ** USER**                    |          PrimaryKey         |      id                  |    Integer                                 |
+| **USER**                     |          PrimaryKey         |      id                  |    Integer                                 |
 |                              |                             |         username         |                                            |
 |                              |                             |  password                |                                            |
 |                              |                             |                          |                                            |
-| GET /category/ Authenticated               | 200 OK, list of all categories                         | Pass✅       |                |
-| POST /category/ Authenticated              | 201 Created, new category created                     | Pass✅       |                 |
-| POST /category/ Unauthenticated            | 403 Forbidden, user not authenticated                 | Pass✅       |                  |
-| *Category Detail*                            |                                          |                    |                      |
+
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| **Profile**                  |          PrimaryKey         |      id                  |    Integer                                 |
+|                              |          ForeingKey         |      username            |                                            |
+|                              |                             |      password            |                                            |
+|                              |                             |       owner              |                                            |
+|                              |                             |      name             |                                            |
+|                              |                             |       desciption              |                                      |
+|                              |                             |      image               |                                            |
+|                              |                             |       created_on              |                                      |
+|                              |                             |      updated_on             |                                            |
+|                              |                             |                    |                                      |
+
+
+
 
 ## **Relationships**
 
