@@ -67,11 +67,23 @@ Various data models were drawn out before creating the actual models, to serve a
 | **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
 | -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
 | **Profile**                  |          PrimaryKey         |      id                  |    Integer                                 |
-|                              |          ForeingKey         |      username            |                                            |
-|                              |                             |      password            |                                            |
-|                              |                             |       owner              |                                            |
+|                              |          ForeingKey        |       owner              |                                            |
 |                              |                             |      name             |                                            |
 |                              |                             |       desciption              |                                      |
+|                              |                             |      image               |                                            |
+|                              |                             |       created_on              |                                      |
+|                              |                             |      updated_on             |                                       |
+|                              |                             |                    |                                                 |
+
+
+| **MODEL**                    |          **KEY**            |    **NAME**              |   **TYPE**                                 |
+| -----------------------------| --------------------------- | -------------------------|------------------------------------------- |
+| **Post**                  |          PrimaryKey         |      id                  |    Integer                                 |
+|                              |          ForeingKey         |      owner            |                                            |
+|                              |                             |      title            |                                            |
+|                              |                             |       owner              |                                         |
+|                              |                             |      description             |                                       |
+|                              |                             |       image              |                                      |
 |                              |                             |      image               |                                            |
 |                              |                             |       created_on              |                                      |
 |                              |                             |      updated_on             |                                            |
